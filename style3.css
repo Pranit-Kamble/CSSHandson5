@@ -1,31 +1,46 @@
+*{
+    box-sizing: border-box;
+}
 body{
+    width: 100vw;
+    overflow-x: hidden;
     font-size: 45px;
     font-weight: bolder;
-    margin: 0px;
+    margin: 10px;
+    padding: 10px;
     z-index: 0;
-    background-image: url(./sky.jpg);
+    
 }
-
+.background{
+    position: relative;
+    background-image: url(./sky.jpg);
+    height: 94vh;
+    width: 96vw;
+}
 .container{
-    width: 1000px;
+    text-align: center;
+    width: 100%;
     margin-top: 0px;
-    margin-left: 100px;
     padding-top: 0px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    /* align-items: center; */
 }
 .one{
+    margin-left: 10px;
     background-color: orange;
     height: 50px;
     width: 200px;
 }
 .two{
+    margin-left: 10px;
     background-color: white;
     height: 50px;
     width: 400px;
 }
 .three{
+    margin-left: 10px;
     background-color: green;
     height: 50px;
     width: 200px;
@@ -33,9 +48,9 @@ body{
 .item1{
     position: absolute;
     bottom: 0px;
-    z-index: 1;
+    z-index: 0;
     height: 30vh;
-    width: 300vw;
+    width: 100%;
     background-repeat: no-repeat;
     background-image:url(./road.jpg);
     animation: road 3s linear infinite;
@@ -46,7 +61,7 @@ body{
     bottom: 213px;
     z-index: 1;
     height: 35vh;
-    width: 300vw;
+    width: 100%;
     background-image: url(./city.png);
     animation: road 20s linear infinite;
 }
@@ -83,7 +98,7 @@ body{
     animation: wheel 2s linear infinite;
 }
 .item6{
-    z-index: 1;
+    z-index: 0;
     position:absolute;
     top: 100px;
     right: 200px;
@@ -103,6 +118,25 @@ body{
     background-size: cover;
     background-image: url(./flag.png);
 }
+.orange{
+    background-color: orange;
+    width: 23px;
+    height: 97vh;
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    transform: skewy(40deg);
+}
+.green{
+    background-color: green;
+    width: 23px;
+    height: 97vh;
+    z-index: 3;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transform: skewy(-40deg);
+}
 
 @keyframes wheel {
     from{
@@ -113,10 +147,10 @@ body{
     }
 }@keyframes road{
     from{
-        transform: translateX(0px);
+        background-position: 0px 0px;
     }
     to{
-        transform: translateX(-1240px);
+        background-position: -150vw 0px;
     }
 }@keyframes sun{
     from{
